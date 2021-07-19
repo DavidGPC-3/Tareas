@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root {
+    --input-active-text: #373F4A;
+    --input-label: #6E7891;
+    --input-placeholder: #A0A8BD;
+    --input-line: #D6DBE7;
+    --text-dark: #32363F;
+    --text-default: #3F474F;
+    --text-light: #C6C7CB;
+    --text-disabled: #AAAAAA;
+    --background-line: #eeeeee;
+    --background-input: #F8F9FA;
+    --background-lighter: #F3F3F3;
+    --primary: #1A75CF;
+    --secondary: #0080FF;
+    --secondary-normal: #36B3FA;
+    --secondary-ight: #4D9FFF;
+    --purple: #8957FF;
+    --yellow: #FFBB00;
+    --error: #D93339;
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+html {
+    font-size: 62.55%;
+}
+
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 128, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 0.5rem;
+}
+
+input[type=text],
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+ul,
+li,
+button {
+    all: unset;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+img {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ESTILOS GENERALES */
+
+.container {
+    max-width: 120rem;
+    padding: 8rem 2rem;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.fd-column {
+    flex-direction: column;
+}
+
+
+/* ESTILOS DE LA VISTA */
+
+nav {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 30px rgb(0 0 0 / 5%);
+}
+
+.navbar {
+    justify-content: space-between;
+    width: 100%;
+    max-width: 120rem;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--text-default);
+}
+
+.to-do {
+    padding: 0.9rem 1.2rem;
+    border-radius: 3rem;
+    border: 1px solid var(--background-line);
+    transition: all 300ms;
+}
+
+.to-do p {
+    font-size: 1.4rem;
+    color: var(--text-default);
+}
+
+.to-do:hover {
+    background-color: var(--background-line);
+}
+
+.nav-buttons {
+    gap: 1rem;
+}
+
+.newTask {
+    padding: 0.9rem 1.4rem;
+    border-radius: 3rem;
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
+    transition: all 300ms;
+}
+
+.newTask p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+    transition: all 300ms;
+}
+
+.newTask:hover {
+    background-color: white;
+}
+
+.newTask:hover p {
+    color: var(--secondary);
+}
+
+.tareas {
+    gap: 2rem;
+}
+
+.tareas h2 {
+    font-size: 2.4rem;
+    color: var(--text-default);
+    font-weight: 500;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr {
+    border-bottom: 1px solid var(--input-label);
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--background-line)
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: center;
+}
+
+th {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text-default);
+}
+
+td {
+    font-size: 1.4rem;
+    color: var(--text-default);
+}
+
+.deleteTask {
+    padding: 0.5rem 1.5rem;
+    color: var(--error);
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid var(--error);
+    transition: all 300ms;
+}
+
+.deleteTask:hover {
+    color: white;
+    background-color: var(--error);
+}
+
+
+/* MODAL DE NUEVA TAREA */
+
+.nuevaTarea {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.15);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nuevaTarea form {
+    background-color: white;
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 40rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nuevaTarea form input {
+    padding: 0 1rem;
+    width: -webkit-fill-available;
+    font-size: 1.4rem;
+    color: var(--text-default);
+    border: 1px solid var(--input-line);
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+}
+
+.nuevaTarea form input::placeholder {
+    font-size: 1.4rem;
+    color: var(--input-placeholder);
+}
+
+.nuevaTarea form button {
+    border-radius: 0.5rem;
+}
