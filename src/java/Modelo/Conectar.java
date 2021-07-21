@@ -13,6 +13,7 @@ public class Conectar {
         private final String urlDatabase = "jdbc:postgresql://localhost:5433/tareas";
         private final String user = "postgres";
         private final String password = "12345";
+        //private static String message;
 
         public Connection getConnection() {
             return connection;

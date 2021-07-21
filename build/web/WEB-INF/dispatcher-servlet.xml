@@ -20,7 +20,8 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
-                
+                <prop key="crear.htm">CrearTareaController</prop>
+                <prop key="delete.htm">DeleteController</prop>
             </props>
         </property>
     </bean>
@@ -33,8 +34,8 @@
     <!--
     The index controller.
     -->
-    <bean name="indexController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="index" />
+    <bean name="indexController" class="Controller.IndexController"/>
+    <bean name="CrearTareaController" class="Controller.CrearTareaController" />
+    <bean name="DeleteController" class="Controller.DeleteController" />
 
 </beans>

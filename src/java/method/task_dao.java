@@ -12,7 +12,7 @@ public class task_dao {
     public static List <Tarea> getAllFalse(Connection connection){
         List <Tarea> list = new ArrayList<>();
         try{
-            String sql = "SELECT id_tarea, nombre_tarea, tarea_finalizada, fecha";
+            String sql = "SELECT id_tarea, nombre_tarea, tarea_finalizada, fecha_hora FROM tarea WHERE tarea_finalizada= false;";
             
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet result = preparedStatement.executeQuery();
@@ -22,8 +22,8 @@ public class task_dao {
                 
                 obj.setId_tarea(result.getInt("id_tarea"));
                 obj.setNombre_tarea(result.getString("nombre_tarea"));
-                obj.setTarea_realizado(result.getBoolean("tarea_realizado"));
-                obj.setFecha_hora(result.getString("fecha_hora"));
+                obj.setTarea_finalizada(result.getBoolean("tarea_finalizada"));
+                obj.setFecha(result.getString("fecha_hora"));
                 
                 list.add(obj);
             }
@@ -36,7 +36,7 @@ public class task_dao {
     public static List<Tarea> getAllTrue(Connection connection){
         List<Tarea> list = new ArrayList<>();
         try{
-            String sql="SELECT id_tarea, nombre_tarea, tarea_realizado, fecha_hora, eliminar_tarea FROM tarea WHERE tarea_realizado= true";
+            String sql="SELECT id_tarea, nombre_tarea, tarea_finalizada, fecha_hora FROM tarea WHERE tarea_finalizada= true";
             
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet result = preparedStatement.executeQuery();
@@ -46,8 +46,8 @@ public class task_dao {
                 
                 obj.setId_tarea(result.getInt("id_tarea"));
                 obj.setNombre_tarea(result.getString("nombre_tarea"));
-                obj.setTarea_realizado(result.getBoolean("tarea_realizado"));
-                obj.setFecha_hora(result.getString("fecha_hora"));
+                obj.setTarea_finalizada(result.getBoolean("tarea_finalizada"));
+                obj.setFecha(result.getString("fecha_hora"));
                 
                 list.add(obj);
             }
@@ -60,7 +60,7 @@ public class task_dao {
     public static int getCount(Connection connection){
         int contador=0;
         try{
-            String sql="SELECT count(*) AS contador FROM tarea WHERE tarea_realizado= false";
+            String sql="SELECT count(*) AS contador FROM tarea WHERE tarea_finalizada= false";
             
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet result = preparedStatement.executeQuery();

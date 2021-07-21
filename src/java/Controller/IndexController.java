@@ -19,12 +19,13 @@ public class IndexController {
         List <Tarea> list_false = task_dao.getAllFalse(connection.getConnection());
         int cont= task_dao.getCount(connection.getConnection());
         List <Tarea> list_true= task_dao.getAllTrue(connection.getConnection());
+        System.out.println("adasd" + list_false.size());
         connection.closeConnection();
         
         ModelAndView mav=new ModelAndView();
-        //mav.addObject("Tareas",list_false);
-        //mav.addObject("tarea_realizado", list_true);
-        //mav.addObject("contador", cont);
+        mav.addObject("Tareas",list_false);
+        mav.addObject("tarea_realizado", list_true);
+        mav.addObject("contador", cont);
         
         mav.setViewName("index");
         return mav;

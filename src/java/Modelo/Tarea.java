@@ -1,16 +1,15 @@
 package Modelo;
 
 public class Tarea {
-    int id_tarea;
-    String nombre_tarea;
-    boolean tarea_finalizada;
-    String fecha;
-    
-    public Tarea(){
+    private int id_tarea;
+    private String nombre_tarea;
+    private boolean tarea_finalizada;
+    private String fecha;
 
+    public Tarea() {
     }
-    
-    public Tarea(int id_tarea, String nombre_tarea, boolean tarea_finalizada, String fecha){
+
+    public Tarea(int id_tarea, String nombre_tarea, boolean tarea_finalizada, String fecha) {
         this.id_tarea = id_tarea;
         this.nombre_tarea = nombre_tarea;
         this.tarea_finalizada = tarea_finalizada;
@@ -33,21 +32,23 @@ public class Tarea {
         this.nombre_tarea = nombre_tarea;
     }
 
-    public boolean isTarea_realizado() {
+    public boolean isTarea_finalizada() {
         return tarea_finalizada;
     }
 
-    public void setTarea_realizado(boolean tarea_realizado) {
-        this.tarea_finalizada = tarea_realizado;
+    public void setTarea_finalizada(boolean tarea_finalizada) {
+        this.tarea_finalizada = tarea_finalizada;
     }
 
-    public String getFecha_hora() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha_hora(String fecha_hora) {
-        this.fecha = fecha_hora;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
+    
+    
 }
 
 
