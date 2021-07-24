@@ -22,6 +22,7 @@
                 <prop key="index.htm">indexController</prop>
                 <prop key="crear.htm">CrearTareaController</prop>
                 <prop key="delete.htm">DeleteController</prop>
+                <prop key="check.htm">CheckController</prop>
             </props>
         </property>
     </bean>
@@ -37,5 +38,6 @@
     <bean name="indexController" class="Controller.IndexController"/>
     <bean name="CrearTareaController" class="Controller.CrearTareaController" />
     <bean name="DeleteController" class="Controller.DeleteController" />
+    <bean name="CheckController" class="Controller.CheckController" />
 
 </beans>
